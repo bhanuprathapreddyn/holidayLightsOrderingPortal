@@ -15,31 +15,31 @@ public class Cart {
             itempricecart.add(price);
         }
     }
-    public void getPlacedOrder(){
-        int quantity = 1;
-        for (int i = 0; i< itemnamecart.size(); i++){
-            if(i != itemnamecart.size()-1) {
-                if (itemnamecart.get(i).equals(itemnamecart.get(i + 1))) {
-                    quantity++;
-                }
-                else{
-                    System.out.println( "Light Model: " + itemnamecart.get(i) + " " +"Quantity: " + quantity + " " + "Price: " + quantity* itempricecart.get(i) +" USD");
-                    quantity  = 1;
-                }
-            }
-            else{
-                System.out.println("Light Model: " + itemnamecart.get(i) + " " +"Quantity: " + quantity + " " + "Price: " + quantity* itempricecart.get(i) +" USD");
-                quantity  = 1;
-            }
-        }
-        int totalprice = 0;
-        for (int i = 0; i<itempricecart.size(); i++){
-            totalprice = totalprice + itempricecart.get(i);
-        }
-        System.out.println("-----------------------------");
-        System.out.println("Number of items: " + itemnamecart.size() +  "\t\t " +"Total Price: " + totalprice + " USD");
-    }
-    public void editOrder() {
+//    public void orderSummary(Cart c){
+//        int quantity = 1;
+//        for (int i = 0; i< itemnamecart.size(); i++){
+//            if(i != itemnamecart.size()-1) {
+//                if (itemnamecart.get(i).equals(itemnamecart.get(i + 1))) {
+//                    quantity++;
+//                }
+//                else{
+//                    System.out.println( "Light Model: " + itemnamecart.get(i) + " " +"Quantity: " + quantity + " " + "Price: " + quantity* itempricecart.get(i) +" USD");
+//                    quantity  = 1;
+//                }
+//            }
+//            else{
+//                System.out.println("Light Model: " + itemnamecart.get(i) + " " +"Quantity: " + quantity + " " + "Price: " + quantity* itempricecart.get(i) +" USD");
+//                quantity  = 1;
+//            }
+//        }
+//        int totalprice = 0;
+//        for (int i = 0; i<itempricecart.size(); i++){
+//            totalprice = totalprice + itempricecart.get(i);
+//        }
+//        System.out.println("-----------------------------");
+//        System.out.println("Number of items: " + itemnamecart.size() +  "\t\t " +"Total Price: " + totalprice + " USD");
+//    }
+    public void editOrder(Cart c) {
         System.out.println("0) Exit");
         for (int i = 0; i < itemnamecart.size(); i++) {
             System.out.println((i + 1) + ") " + itemnamecart.get(i) + "\t\t" + itempricecart.get(i) + " USD");
