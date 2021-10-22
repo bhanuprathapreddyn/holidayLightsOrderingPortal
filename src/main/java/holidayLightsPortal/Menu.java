@@ -8,8 +8,12 @@ import java.util.Scanner;
 
 public class Menu {
     String[] arr = new String[]{"ShortRound", "Globe", "Tube", "Cone", "Place your Order", "Edit Cart"};
-    Cart cart = Cart.getInstance();
-    public void displayMenu() {
+    public static Cart cart = Cart.getInstance();
+    static List<Lightslist> list;
+    static Scanner s1 = new Scanner(System.in);
+    static CartActions ca = new CartActions();
+
+    public int displayMenu() {
         int x;
         System.out.println("Choose Light Shape ");
         // Show only Light Types if the cart is empty, cart options if the cart is not empty
@@ -21,13 +25,11 @@ public class Menu {
         for (int i = 0; i < x; i++) {
             System.out.println((i + 1) + ") " + arr[i]);
         }
+        return x;
     }
 
-    List<Lightslist> list;
-    Scanner s1 = new Scanner(System.in);
 
-    CartActions ca = new CartActions();
-    public Boolean orderSelection(String inp) {
+    public static Boolean orderSelection(String inp) {
         if (Integer.parseInt(inp) < 5)
             System.out.println("Choose Light Model ");
         switch (inp) {
@@ -139,6 +141,7 @@ public class Menu {
                 return false;
             }
             case "5":
+                cart.state = new CartOrdered().updateState();
                 System.out.println("\n\n" + "Order Placed!!!");
                 System.out.println("-----------------------------" + "\n" + "Order Summary" + "\n" + "-----------------------------");
                 ca.orderSummary(cart);
