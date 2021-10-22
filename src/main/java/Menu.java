@@ -5,17 +5,24 @@ import java.util.Scanner;
 
 public class Menu {
     String[] arr = new String[]{"ShortRound", "Globe", "Tube", "Cone", "Place your Order", "Edit Cart"};
-
+    Cart cart = new Cart();
     public void displayMenu() {
+        int x;
         System.out.println("Choose Light Shape ");
-        for (int i = 0; i < arr.length; i++) {
+        // Show only Light Types if the cart is empty, cart options if the cart is not empty
+        if (cart.state.contains("EmptyCart"))
+            x = arr.length - 2;
+        else
+            x = arr.length;
+
+        for (int i = 0; i < x; i++) {
             System.out.println((i + 1) + ") " + arr[i]);
         }
     }
 
     List<lightslist> list;
     Scanner s1 = new Scanner(System.in);
-    Cart cart = new Cart();
+
     SummaryIterator si = new SummaryIterator();
     public Boolean orderSelection(String inp) {
         if (Integer.parseInt(inp) < 5)

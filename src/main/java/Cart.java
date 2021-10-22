@@ -2,7 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Cart {
+public class Cart implements CartState{
+    CartState cs;
+    String state = String.valueOf(new EmptyCart());
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "cs=" + cs +
+                ", state='" + state + '\'' +
+                ", itemnamecart=" + itemnamecart +
+                ", itempricecart=" + itempricecart +
+                '}';
+    }
+
     public List<String> itemnamecart;
     public List<Integer> itempricecart;
     public Cart(){
@@ -14,6 +27,8 @@ public class Cart {
             itemnamecart.add(item);
             itempricecart.add(price);
         }
+        state = String.valueOf(new ReadyToOrder());
+        System.out.println("Ready to Order");
     }
 //    public void orderSummary(Cart c){
 //        int quantity = 1;
@@ -71,4 +86,8 @@ public class Cart {
         }
     }
 
+    @Override
+    public String updateState() {
+        return null;
+    }
 }
