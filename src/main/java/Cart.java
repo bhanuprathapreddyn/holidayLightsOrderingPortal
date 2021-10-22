@@ -90,4 +90,11 @@ public class Cart implements CartState{
     public String updateState() {
         return null;
     }
+    //Singleton Class - Only one instance of cart is allowed
+public static Cart cartInstance;
+    public static Cart getInstance(){
+       cartInstance = new Cart();
+       return cartInstance;
+
+    }
 }

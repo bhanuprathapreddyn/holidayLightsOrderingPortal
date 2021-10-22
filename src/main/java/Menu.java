@@ -1,11 +1,12 @@
 
 
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     String[] arr = new String[]{"ShortRound", "Globe", "Tube", "Cone", "Place your Order", "Edit Cart"};
-    Cart cart = new Cart();
+    Cart cart = Cart.getInstance();
     public void displayMenu() {
         int x;
         System.out.println("Choose Light Shape ");
