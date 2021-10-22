@@ -1,4 +1,8 @@
-public class G50 implements lightslist {
+package lightModels;
+
+import holidayLightsPortal.Lightslist;
+
+public class G50 implements Lightslist {
     @Override
     public String lightType() {
         return "G50";

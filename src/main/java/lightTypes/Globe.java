@@ -1,11 +1,17 @@
+package lightTypes;
+
+import holidayLightsPortal.Lightslist;
+import lightModels.G30;
+import lightModels.G50;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Globe {
-    List<lightslist> globelist = new ArrayList<>();
+    public List<Lightslist> globeList = new ArrayList<>();
     public Globe() {
-        globelist.add(new G30());
-        globelist.add(new G50());
+        globeList.add(new G30());
+        globeList.add(new G50());
     }
 
 }

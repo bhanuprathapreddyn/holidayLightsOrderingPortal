@@ -1,10 +1,15 @@
+package lightTypes;
+
+import holidayLightsPortal.Lightslist;
+import lightModels.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Tube {
-    List<lightslist> tubelist = new ArrayList<>();
+    public List<Lightslist> tubeList = new ArrayList<>();
     public Tube() {
-        tubelist.add(new T6());
-        tubelist.add(new T50());
+        tubeList.add(new T6());
+        tubeList.add(new T50());
     }
 }

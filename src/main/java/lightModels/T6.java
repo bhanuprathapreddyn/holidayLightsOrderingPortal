@@ -1,4 +1,8 @@
-public class T6 implements lightslist {
+package lightModels;
+
+import holidayLightsPortal.Lightslist;
+
+public class T6 implements Lightslist {
     @Override
     public String lightType() {
         return  "T6";

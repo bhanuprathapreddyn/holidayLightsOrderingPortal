@@ -1,4 +1,8 @@
-public class S11 implements lightslist {
+package lightModels;
+
+import holidayLightsPortal.Lightslist;
+
+public class S11 implements Lightslist {
     @Override
     public String lightType() {
         return  "S11";
