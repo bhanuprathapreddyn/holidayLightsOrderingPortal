@@ -15,7 +15,7 @@ public class CartActions {
         Scanner s3 = new Scanner(System.in);
         int inp = s3.nextInt();
         if (inp != 0) {
-            System.out.print("Enter Quantity ");
+            System.out.print("Enter Quantity: ");
             int quan = s3.nextInt();
             int origQuan = c.itemQuantity.get(inp - 1);
             if (origQuan < quan) System.out.print("Entered Quantity is not correct. No changes made to cart");
@@ -41,10 +41,10 @@ public class CartActions {
             System.out.println("Light Model: " + c.itemsInCart.get(c.index) + "\t\t " + "Quantity: " + c.itemQuantity.get(c.index) + "\t\t" + "Price per Unit: " + c.itemPriceInCart.get(c.index) + " USD");
             c.index++;}
             int totalprice = 0;
-            ListIterator<Integer> theIterator = c.itemPriceInCart.listIterator();
-            while (theIterator.hasNext()) {
-                int index = theIterator.nextIndex();
-                totalprice = totalprice + (theIterator.next()* c.itemQuantity.get(index));
+            ListIterator<Integer> priceIterator = c.itemPriceInCart.listIterator();
+            while (priceIterator.hasNext()) {
+                int index = priceIterator.nextIndex();
+                totalprice = totalprice + (priceIterator.next()* c.itemQuantity.get(index));
 //                totalprice = totalprice + (theIterator.next()*c.;
             }
             System.out.println("-----------------------------");
