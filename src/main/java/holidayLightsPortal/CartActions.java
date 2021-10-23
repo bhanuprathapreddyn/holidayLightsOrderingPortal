@@ -47,7 +47,7 @@ public class CartActions {
                 totalprice = totalprice + (priceIterator.next()* c.itemQuantity.get(index));
             }
             System.out.println("-----------------------------");
-            System.out.println("Number of items: " + c.itemPriceInCart.size() + "\t\t " + "Total Price: " + totalprice + " USD");
+            System.out.println("Number of items: " + c.itemQuantity.stream().mapToInt(n->n).sum() + "\t\t " + "Total Price: " + totalprice + " USD");
         }
 
     }
