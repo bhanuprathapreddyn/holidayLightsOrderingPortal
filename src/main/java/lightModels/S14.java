@@ -10,6 +10,6 @@ public class S14 implements Lightslist {
 
     @Override
     public int lightPrice() {
-        return  200;
+        return 200;
     }
 }

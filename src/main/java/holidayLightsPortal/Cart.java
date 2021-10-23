@@ -83,16 +83,4 @@ public class Cart implements CartState, CartIterator {
             }
         return null;
     }
-
-//    public Object nextItem() {
-//        index--;
-//        if (this.hasNext()) return itemsInCart.get(index++);
-//        return null;
-//    }
-//    @Override
-//    public Object nextPrice() {
-//        index--;
-//        if (this.hasNext()) return itemPriceInCart.get(index++);
-//        return null;
-//    }
 }

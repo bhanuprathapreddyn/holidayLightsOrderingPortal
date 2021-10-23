@@ -45,7 +45,6 @@ public class CartActions {
             while (priceIterator.hasNext()) {
                 int index = priceIterator.nextIndex();
                 totalprice = totalprice + (priceIterator.next()* c.itemQuantity.get(index));
-//                totalprice = totalprice + (theIterator.next()*c.;
             }
             System.out.println("-----------------------------");
             System.out.println("Number of items: " + c.itemPriceInCart.size() + "\t\t " + "Total Price: " + totalprice + " USD");
