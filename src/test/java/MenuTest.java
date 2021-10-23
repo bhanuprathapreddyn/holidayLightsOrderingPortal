@@ -12,15 +12,17 @@ public class MenuTest {
     public void testDisplayMenu() {
         Menu menu = new Menu();
         assertEquals(4,menu.displayMenu());
-        menu.cart.state = String.valueOf(new ReadyToOrder());;
+        Menu.cart.state = new ReadyToOrder().updateState();
         assertEquals(6,menu.displayMenu());
-
     }
 
     @Test
     public void testOrderSelection() {
         Menu menu = new Menu();
-        assertFalse(menu.orderSelection("8"));
-        assertTrue(menu.orderSelection("5"));
+        assertFalse(Menu.orderSelection("8"));
+        assertTrue(Menu.orderSelection("5"));
+        Boolean flag = Menu.orderSelection("5");
+        assertEquals("Ordered", Menu.cart.state);
+
     }
 }

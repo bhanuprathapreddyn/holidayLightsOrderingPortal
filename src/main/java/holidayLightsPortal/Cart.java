@@ -7,10 +7,11 @@ import java.util.Scanner;
 
 public class Cart implements CartState, CartIterator {
     CartState cs;
-    int index;
+    int index=0;
     public String state = new EmptyCart().updateState();
     public List<String> itemsInCart;
     public List<Integer> itemPriceInCart;
+    public List<Integer> itemQuantity;
 
     public CartIterator getIterator() {
         return new Cart();
@@ -29,12 +30,20 @@ public class Cart implements CartState, CartIterator {
     public Cart() {
         itemsInCart = new ArrayList<>();
         itemPriceInCart = new ArrayList<>();
+        itemQuantity = new ArrayList<>();
+
     }
 
     public void addItem(String item, int price, int quantity) {
-        for (int i = 0; i < quantity; i++) {
+//        for (int i = 0; i < quantity; i++) {
+        if(!itemsInCart.contains(item)) {
             itemsInCart.add(item);
             itemPriceInCart.add(price);
+            itemQuantity.add(quantity);
+        }else{
+            int index = itemsInCart.indexOf(item);
+            int origQuantity = itemQuantity.get(index);
+            itemQuantity.set(index,quantity+origQuantity);
         }
         state = new ReadyToOrder().updateState();
     }
@@ -60,7 +69,30 @@ public class Cart implements CartState, CartIterator {
 
     @Override
     public Object next() {
-        if (this.hasNext()) return itemsInCart.get(index++);
+        String item;
+        int price;
+        int quantity;
+
+        if (this.hasNext())
+        {
+            item =  itemsInCart.get(index);
+            price = itemPriceInCart.get(index);
+            quantity = itemQuantity.get(index);
+            index++;
+            return null;
+            }
         return null;
     }
+
+//    public Object nextItem() {
+//        index--;
+//        if (this.hasNext()) return itemsInCart.get(index++);
+//        return null;
+//    }
+//    @Override
+//    public Object nextPrice() {
+//        index--;
+//        if (this.hasNext()) return itemPriceInCart.get(index++);
+//        return null;
+//    }
 }
