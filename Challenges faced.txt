@@ -1,5 +1,4 @@
 I'd say my major challenge was thinking backwards. Given a usecase, choosing a design pattern would be easier than fitting a usecase to the design patterns we choose. For example, I couldn't think of a good way to pull in state pattern into the ordering portal. I have then used the State pattern to display the menu according to the state of the cart.
-
-Another surprising area that took quite some time is setting up JUnit. Since this is the first time I'm using JUnit, I spent quite some time understanding and setting it up. The number of positive and negative test scenarios were so many that I felt writing test cases itself was a big project
+Handling and browsing through the project became very difficult due to the number of classes being used. I have then organzed the code by pushing them in to their respective packages. This made code look simple and easy to navigate and debug
+Another surprising area that took quite some time is setting up JUnit. Since this is my first time using JUnit, I spent quite some time understanding and setting it up. The number of positive and negative test scenarios were so many that I felt writing test cases itself was a big project
 Overall, This is a very interesting exercise and I've enjoyed the learning process.
-
